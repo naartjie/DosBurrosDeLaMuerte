@@ -1,0 +1,94 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #ccc;
+  background-color: #c4cecd;
+  margin: 0 0 0 0px;
+}
+
+.page-header {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background: #29abe2;
+}
+
+h1, .h1 {
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 2px #6C84A3;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
+.col-centered{
+    margin: 0 auto;
+}
+
+.expanded {
+   background: #fff;
+   height: 300px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   -webkit-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: 0 0 10px 5px #BCBEC2;
+   box-shadow: 0 0 10px 5px #BCBEC2;
+}
+
+.collapsed {
+   background: #fff;
+   -webkit-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: 0 0 6px 3px #C3C5C9;
+   box-shadow: 0 0 6px 3px #C3C5C9;
+}
+
+.timecontainer {
+  display: inline-block;
+  width: 18%;
+  font-family: Lato, Arial, serif; 
+  font-weight: 700;
+  font-size: 2.5em;
+  text-align: center;
+  color: #555;
+}
+
+.tempcontainer {
+  display: inline-block;
+  width: 18%;
+  font-family: Roboto Slab, Arial, serif; 
+  font-weight: 300;
+  font-size: 5em;
+  text-align: center;
+}
+
+.conditionssum {
+  display: inline-block;
+  width: 18%;
+}
+
+.windcontainer {
+  display: inline-block;
+  width: 18%;
+  text-align: center;
+  font-family: Roboto, Arial, serif;
+  font-weight: 300;
+  font-size: 2.5em;
+  color: #777;
+}
+
+.wavedata {
+  display: inline-block;
+  font-family: Roboto, Arial, serif;
+  width: 18%;
+  text-align: right;
+  color: #222;
+  font-size: 1em;
+}
