@@ -66,7 +66,9 @@ describe('converter', function() {
         // and second
         expect( result[1].precipitation ).to.equal(0.1);
 
-        // expect( first.clouds ).to.equal();
+        expect( first.cloud ).to.eql({
+            low: 0, med: 0, high: 0, total: 0
+        });
 
         // expect( first.wind.speed ).to.equal();
         // expect( first.wind.gusts ).to.equal();
@@ -82,7 +84,9 @@ describe('converter', function() {
         // and second to last
         expect( result.slice(-2)[0].precipitation ).to.equal(1.1);
 
-        // expect( last.clouds ).to.equal();
+        expect( last.cloud ).to.eql({
+            low: 99, med: 5, high: 1, total: 99
+        });
 
         // expect( last.wind.speed ).to.equal();
         // expect( last.wind.gusts ).to.equal();

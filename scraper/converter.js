@@ -47,6 +47,10 @@ function convertToFlatArray (meat) {
         meat.hr_h,
         meat.TMP,
         meat.APCP,
+        meat.LCDC,
+        meat.MCDC,
+        meat.HCDC,
+        meat.TCDC,
         meat.WINDDIR,
     ];
 
@@ -60,9 +64,15 @@ function convertToFlatArray (meat) {
             hour: moment().set('hours', data[1]).format('ha'),
             temperature: Math.round(data[2]),
             precipitation: Number(data[3]),
+            cloud: {
+                low: Number(data[4]),
+                med: Number(data[5]),
+                high: Number(data[6]),
+                total: Number(data[7]),
+            },
             wind: {
-                degrees: data[4],
-                cardinal: degreesToCardinal(data[4]),
+                degrees: data[8],
+                cardinal: degreesToCardinal(data[8]),
             }
         };
     });
