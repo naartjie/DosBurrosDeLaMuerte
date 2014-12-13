@@ -1,0 +1,30 @@
+{
+  "name": "DosBurrosDeLaMuerte",
+  "repository": "https://github.com/naartjie/DosBurrosDeLaMuerte",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha",
+    "watch": "node_modules/mocha/bin/mocha --watch"
+  },
+  "dependencies": {
+    "express": "^4.10.6",
+    "lodash": "^2.4.1",
+    "moment": "^2.8.4"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "jshintConfig": {
+    "node": true,
+    "strict": true,
+    "white": false,
+    "undef": true,
+    "unused": true,
+    "lastsemic": true,
+    "newcap": true,
+    "maxlen": 100,
+    "indent": 4,
+    "trailing": true,
+    "eqeqeq": true
+  }
+}
