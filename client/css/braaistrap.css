@@ -1,20 +1,20 @@
 body {
   font-family: Roboto, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   color: #ccc;
   background-color: #c4cecd;
   margin: 0 0 0 0px;
 }
 
 .page-header {
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 1px;
+  padding-top: 1px;
   background: #29abe2;
 }
 
 h1, .h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 30px;
   color: #fff;
   text-shadow: 0 0 2px #6C84A3;
 }
@@ -27,68 +27,41 @@ h1, .h1 {
 }
 
 
-.col-centered{
-    margin: 0 auto;
-}
+/* EXPANDED COLUMN */
 
 .expanded {
-   background: #fff;
-   height: 300px;
-   margin-top: 30px;
-   margin-bottom: 30px;
-   -webkit-border-radius: 15px;
-   border-radius: 15px;
-   -webkit-box-shadow: 0 0 10px 5px #BCBEC2;
-   box-shadow: 0 0 10px 5px #BCBEC2;
+  background: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
 }
+
+.col1 {}
+.expandedTime {background: #ff00ff;}
+.expandedTemp {background: #00ff00;}
+
+.col2 {}
+.expandedWeather {background: #333311;}
+
+.col3 {}
+.expandedWind {background: #2211ff;}
+.expandedWave { background: #ff5588;}
+
+
+
+/* COLLAPSED COLUMN */
 
 .collapsed {
-   background: #fff;
-   -webkit-border-radius: 15px;
-   border-radius: 15px;
-   -webkit-box-shadow: 0 0 6px 3px #C3C5C9;
-   box-shadow: 0 0 6px 3px #C3C5C9;
+  background: #fff;
 }
 
-.timecontainer {
-  display: inline-block;
-  width: 18%;
-  font-family: Lato, Arial, serif; 
-  font-weight: 700;
-  font-size: 2.5em;
-  text-align: center;
-  color: #555;
-}
+.time {display: inline-block; width:19%; background: #ff00ff;}
 
-.tempcontainer {
-  display: inline-block;
-  width: 18%;
-  font-family: Roboto Slab, Arial, serif; 
-  font-weight: 300;
-  font-size: 5em;
-  text-align: center;
-}
+.temp {display: inline-block; width:19%; background: #00ff00;}
 
-.conditionssum {
-  display: inline-block;
-  width: 18%;
-}
+.summary {display: inline-block; width:19%; background: #333311;}
+.summary .img {height:auto; vertical-align: middle;}
 
-.windcontainer {
-  display: inline-block;
-  width: 18%;
-  text-align: center;
-  font-family: Roboto, Arial, serif;
-  font-weight: 300;
-  font-size: 2.5em;
-  color: #777;
-}
+.wind {display: inline-block; width:19%; background: #2211ff;}
 
-.wavedata {
-  display: inline-block;
-  font-family: Roboto, Arial, serif;
-  width: 18%;
-  text-align: right;
-  color: #222;
-  font-size: 1em;
-}
+.wave {display: inline-block; width:19%; background: #ff5588;}
