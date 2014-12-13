@@ -58,9 +58,15 @@ describe('converter', function() {
 
         expect( result ).to.have.length( meat.hr_weekday.length );
 
-        expect( result[0].dayOffset ).to.equal(0);
-        expect( result.slice(-1)[0].dayOffset ).to.equal(7);
+        var first = result[0];
+        expect( first.dayOffset ).to.equal(0);
+        expect( first.hour ).to.equal('8am');
+        expect( first.wind.degrees ).to.equal(204);
 
+        var last = result.slice(-1)[0];
+        expect( last.dayOffset ).to.equal(7);
+        expect( last.hour ).to.equal('8pm');
+        expect( last.wind.degrees ).to.equal(189);
     });
 
     it('should digest JSON data', function() {

@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash'),
+    assert = require('assert'),
     moment = require('moment');
 
 module.exports = converter;
@@ -40,8 +41,25 @@ converter.mapDayOffsetToWeekday = (function() {
 
 converter.convertToFlatArray = convertToFlatArray;
 function convertToFlatArray (meat) {
-    return daysToOffset(meat.hr_weekday).map(function(dayOffset) {
-        return { dayOffset: dayOffset };
+
+    var arrays = [
+        daysToOffset(meat.hr_weekday),
+        meat.hr_h,
+        meat.WINDDIR
+    ];
+
+    assert(_(arrays).all(function(arr) { 
+        return arr.length === arrays[0].length;
+    }));
+
+    return _.zip(arrays).map(function(data) {
+        return { 
+            dayOffset: data[0],
+            hour: moment().set('hours', data[1]).format('ha'),
+            wind: {
+                degrees: data[2],
+            }
+        };
     });
 }
 
