@@ -3,8 +3,8 @@
 exports.convert = require('./converter');
 exports.pullDataz = require('./scraper');
 
+var data = exports.convert(require('../test/fixtures/wg-data').wgJson);
 
-var data = require('../test/fixtures/wg-data');
 exports.getCachedData = function() {
-    return exports.convert(data.wgJson);
+    return data;
 };
