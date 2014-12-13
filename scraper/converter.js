@@ -58,6 +58,7 @@ function convertToFlatArray (meat) {
             hour: moment().set('hours', data[1]).format('ha'),
             wind: {
                 degrees: data[2],
+                cardinal: degreesToCardinal(data[2]),
             }
         };
     });
@@ -74,4 +75,17 @@ function daysToOffset(dayNumArr) {
         // but we *ARE* doing a hackathon ;-P
         return (result === 0 && i > len / 2 ? 7 : result);
     });
+}
+
+var cardinals = [
+    'N', 'NNE', 'NE', 
+    'ENE', 'E', 'ESE', 
+    'SE', 'SSE', 'S', 
+    'SSW', 'SW', 'WSW', 
+    'W', 'WNW', 'NW', 
+    'NNW', 'N'
+];
+converter.degreesToCardinal = degreesToCardinal;
+function degreesToCardinal(degrees) {
+    return cardinals[Math.floor(((degrees + 11.25) % 360) / 22.5)];
 }

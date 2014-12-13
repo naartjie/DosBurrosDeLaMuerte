@@ -62,11 +62,28 @@ describe('converter', function() {
         expect( first.dayOffset ).to.equal(0);
         expect( first.hour ).to.equal('8am');
         expect( first.wind.degrees ).to.equal(204);
+        expect( first.wind.cardinal ).to.equal('SSW');
 
         var last = result.slice(-1)[0];
         expect( last.dayOffset ).to.equal(7);
         expect( last.hour ).to.equal('8pm');
         expect( last.wind.degrees ).to.equal(189);
+        expect( last.wind.cardinal ).to.equal('S');
+    });
+
+    it('should convert degrees to cardinal', function() {
+
+        var conv = function(deg) {
+            return converter.degreesToCardinal(deg);
+        };
+
+        expect( conv(348) ).to.equal('NNW');
+
+        expect( conv(349) ).to.equal('N');
+        expect( conv(359) ).to.equal('N');
+        expect( conv(0)   ).to.equal('N');
+        expect( conv(11)  ).to.equal('N');
+        expect( conv(12)  ).to.equal('NNE');
     });
 
     it('should digest JSON data', function() {
