@@ -136,41 +136,65 @@ describe('converter', function() {
         var wgJson = require('./fixtures/wg-data').wgJson;
         var dosBurrosData = converter(wgJson);
 
-        expect(dosBurrosData).to.have.property('days');
+        // expect(dosBurrosData).to.have.property('days');
+        expect( dosBurrosData.days ).to.be.instanceof(Array);
 
         var today = dosBurrosData.days[0];
 
-        expect(today.name).to.be.equal('Today');
-        // expect(today.chunks).to.have.length(6);
+        expect( today.name ).to.be.equal('Today');
+        expect( today.chunks ).to.have.length(6);
 
-        // expect(today.chunks[0]).to.be.equal({
-        //     hour: '7am',
-        //     temp: 24,
-        //     precipitation: 0.8,
-        //     cloudcover: [0.8, 0.6, 0],
-        //     wind: {
-        //         speed: 5,
-        //         gusts: 12,
-        //         direction: {
-        //             degrees: 215,
-        //             cardinal: 'NW',
-        //         }
-        //     }
-        // });
+        expect( _(today.chunks).first() ).to.eql({
+            dayName: 'Today',
+            dayOffset: 0,
+            hour: '8am',
+            temperature: 21,
+            precipitation: 0,
+            cloud: {
+                  low: 0, 
+                  med: 0, 
+                 high: 0, 
+                total: 0
+            },
+            wind: {
+                   speed: 24,
+                   gusts: 30,
+                 degrees: 204,
+                cardinal: 'SSW',
+            },
+            wave: {
+                  height: 1.9,
+                  period: 8,
+                 degrees: 187,
+                cardinal: 'S',
+            }
+        });
 
-        // expect(today.chunks[4]).to.be.equal({
-        //     hour: '7am',
-        //     temp: 24,
-        //     precipitation: 0.8,
-        //     cloudcover: [0.8, 0.6, 0],
-        //     wind: {
-        //         speed: 5,
-        //         gusts: 12,
-        //         direction: {
-        //             degrees: 215,
-        //             cardinal: 'NW',
-        //         }
-        //     }
-        // });
+        // last one is at 11pm and is not visible in durbs
+        expect( _(today.chunks).last(2).first() ).to.eql({
+            dayName: 'Today',
+            dayOffset: 0,
+            hour: '8pm',
+            temperature: 20,
+            precipitation: 0.2,
+            cloud: {
+                  low: 87,
+                  med: 0, 
+                 high: 23, 
+                total: 92,
+            },
+            wind: {
+                   speed: 7,
+                   gusts: 11,
+                 degrees: 56,
+                cardinal: 'NE',
+            },
+            wave: {
+                  height: 1.4,
+                  period: 12,
+                 degrees: 199,
+                cardinal: 'SSW',
+            }
+        });
     });
 });

@@ -10,21 +10,30 @@ module.exports = converter;
 function converter(wgData) {
 
     var meat = wgData.fcst['3'];
+    var flatArray = convertToFlatArray(meat);
 
-    var todaysNumber = meat.hr_weekday[0];
+    _(flatArray).each(function(chunk) {
+        chunk.dayName = converter.mapDayOffsetToWeekday(chunk.dayOffset);
+    });
 
-    // 6666,0000000,11111111,22222222,33333333,444444,555555,66666
+    var dayNames = _(flatArray)
+        .pluck('dayName')
+        .unique()
+        .value();
 
-    // to offset
-    // 00000,1111,22222,33333,44444,55555,6666
-
-    // console.log(weekdays);
+    var result = _(dayNames).map(function(dayName) {
+        return {
+            name: dayName,
+            chunks: _(flatArray)
+                .filter(function(chunk) {
+                    return chunk.dayName === dayName;
+                })
+                .value(),
+        };
+    }).value();
 
     return {
-        days: [{
-            name: 'Today',
-            chunks: []
-        }]
+        days: result,
     };
 }
 
