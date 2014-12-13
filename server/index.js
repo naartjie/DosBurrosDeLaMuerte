@@ -2,26 +2,38 @@
 
 var express = require('express');
 var app = express();
+var env = process.env.NODE_ENV || 'development';
 
 var fs = require('fs');
 
-var swig = require('swig');
-var template = fs.readFileSync(__dirname + '/../client/templates/content.swig.html').toString();
-var swigJs = fs.readFileSync(__dirname + '/../node_modules/swig/dist/swig.min.js')
-    .toString()
-    .replace('//# sourceMappingURL=dist/swig.js.map', '');
-var mainTplJs = 'var mainTemplate = ' + swig
-    .precompile(template, {})
-    .tpl
-    .toString()
-    .replace('anonymous', '');
-var templateJs = swigJs + '\n' + mainTplJs;
+var template = (function() {
+    var swig = require('swig');
+    var swigJs = fs.readFileSync(__dirname + '/../node_modules/swig/dist/swig.min.js')
+        .toString()
+        .replace('//# sourceMappingURL=dist/swig.js.map', '');
+
+    var _renderTemplate = function() {
+        var mainContentTpl = fs.readFileSync(
+            __dirname + '/../client/templates/content.swig.html').toString();
+        return 'var mainTemplate = ' + swig.precompile(mainContentTpl, {})
+            .tpl
+            .toString()
+            .replace('anonymous', '') + '\n' + swigJs;
+    };
+
+    if (env === 'development') {
+        return function() { return _renderTemplate() };
+    } else {
+        var cached = _renderTemplate();
+        return function() { return cached };
+    }
+})();
 
 var scraper = require('../scraper');
 
 app.get('/js/template', function(req, res) {
     res.set('Content-Type', 'application/javascript');
-    res.send(templateJs);
+    res.send(template());
 });
 
 app.get('/api', function(req, res) {
