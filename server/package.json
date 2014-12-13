@@ -1,0 +1,19 @@
+{
+	"name": "DosBurrosDeLaMuerte",
+  "dependencies": {
+    "express": "^4.10.6"
+  },
+  "jshintConfig": {
+    "node": true,
+    "strict": true,
+    "white": false,
+    "undef": true,
+    "unused": true,
+    "lastsemic": true,
+    "newcap": true,
+    "maxlen": 100,
+    "indent": 4,
+    "trailing": true,
+    "eqeqeq": true
+  }
+}
