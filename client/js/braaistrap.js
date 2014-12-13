@@ -10,16 +10,9 @@ var minimalAjax = function(url, callback){
     }
     xmlHTTP.open("GET", url, true);
     xmlHTTP.send();
- 
 }
  
-var data = null;
-
 minimalAjax('/api', function(dataStr) {
-
-
-data = JSON.parse(dataStr);
-console.log(data);
-
+    var data = JSON.parse(dataStr);
     document.querySelector('#main_content').innerHTML = mainView(data);
 });
