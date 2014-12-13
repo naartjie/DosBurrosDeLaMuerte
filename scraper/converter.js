@@ -56,6 +56,9 @@ function convertToFlatArray (meat) {
         meat.WINDSPD,
         meat.GUST,
         meat.WINDDIR,
+        meat.HTSGW,
+        meat.PERPW,
+        meat.DIRPW,
     ];
 
     assert(_(arrays).all(function(arr) { 
@@ -79,6 +82,13 @@ function convertToFlatArray (meat) {
                 gusts: Math.round(data[9] * KMS_IN_KNOT),
                 degrees: data[10],
                 cardinal: degreesToCardinal(data[10]),
+            },
+
+            wave: {
+                height: data[11],
+                period: Math.round(data[12]),
+                degrees: data[13],
+                cardinal: degreesToCardinal(data[13]),
             }
         };
     });

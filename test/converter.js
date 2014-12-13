@@ -80,6 +80,13 @@ describe('converter', function() {
             cardinal: 'SSW',
         });
 
+        expect( first.wave ).to.eql({
+              height: 1.9,
+              period: 8,
+             degrees: 187,
+            cardinal: 'S',
+        });
+
         var last = result.slice(-1)[0];
         expect( last.dayOffset ).to.equal(7);
         expect( last.hour ).to.equal('8pm');
@@ -97,6 +104,13 @@ describe('converter', function() {
                speed: 18,
                gusts: 27,
              degrees: 189,
+            cardinal: 'S',
+        });
+
+        expect( last.wave ).to.eql({
+              height: 1.6,
+              period: 13,
+             degrees: 181,
             cardinal: 'S',
         });
 
