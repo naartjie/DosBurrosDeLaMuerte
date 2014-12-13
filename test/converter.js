@@ -61,12 +61,24 @@ describe('converter', function() {
         var first = result[0];
         expect( first.dayOffset ).to.equal(0);
         expect( first.hour ).to.equal('8am');
+        expect( first.temperature ).to.equal(21);
+        // expect( first.precipitation ).to.equal();
+        // expect( first.clouds ).to.equal();
+
+        // expect( first.wind.speed ).to.equal();
+        // expect( first.wind.gusts ).to.equal();
         expect( first.wind.degrees ).to.equal(204);
         expect( first.wind.cardinal ).to.equal('SSW');
 
         var last = result.slice(-1)[0];
         expect( last.dayOffset ).to.equal(7);
         expect( last.hour ).to.equal('8pm');
+        expect( last.temperature ).to.equal(20);
+        // expect( last.precipitation ).to.equal();
+        // expect( last.clouds ).to.equal();
+
+        // expect( last.wind.speed ).to.equal();
+        // expect( last.wind.gusts ).to.equal();
         expect( last.wind.degrees ).to.equal(189);
         expect( last.wind.cardinal ).to.equal('S');
     });

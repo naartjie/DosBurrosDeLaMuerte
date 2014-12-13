@@ -45,7 +45,8 @@ function convertToFlatArray (meat) {
     var arrays = [
         daysToOffset(meat.hr_weekday),
         meat.hr_h,
-        meat.WINDDIR
+        meat.TMP,
+        meat.WINDDIR,
     ];
 
     assert(_(arrays).all(function(arr) { 
@@ -56,9 +57,10 @@ function convertToFlatArray (meat) {
         return { 
             dayOffset: data[0],
             hour: moment().set('hours', data[1]).format('ha'),
+            temperature: Math.round(data[2]),
             wind: {
-                degrees: data[2],
-                cardinal: degreesToCardinal(data[2]),
+                degrees: data[3],
+                cardinal: degreesToCardinal(data[3]),
             }
         };
     });
