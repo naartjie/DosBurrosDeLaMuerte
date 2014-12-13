@@ -1,71 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Surf Or Braai</title>
-
     <link href="css/braaistrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:300,100,400|Roboto:500,300,700' rel='stylesheet' type='text/css'>
-
   </head>
   
   <body>
-
-    <script id="main_tpl" type="text/swig-template">
-      {% for day in days %}
-
-        <div class="page-header">
-          <h1>{{ day.name }}</h1>
-        </div>
-        
-        <div class="wrapper">
-
-          {% for chunk in day.chunks %}
-            {% if loop.first %}
-
-              <div class="expanded">
-                
-                <div class="col1">
-                  <div class="expandedTime">{{ chunk.hour }}</div>
-                  <div class="expandedTemp">{{ chunk.temperature }}°</div>
-                </div>
-                
-                <div class="col2">
-                  <div class="expandedWeather"><img src="svg/sunny.svg"></div>
-                </div>
-                
-                <div class="col3">
-                  <div class="expandedWind">{{ chunk.wind.speed }}kph {{ chunk.wind.cardinal }}</div>
-                  <div class="expandedWave">{{ chunk.wave.height }}m   {{ chunk.wave.period }}sec</div>
-                </div>
-                
-              </div>
-
-            {% else %}
-
-              <div class="collapsed"> 
-                <div class="time">{{ chunk.hour }}</div>
-                <div class="temp">{{ chunk.temperature }}°</div>
-                <div class="summary"><img src="svg/cloudy.svg"></div>
-                <div class="wind">{{ chunk.wind.speed}}kph {{ chunk.wind.cardinal }}</div>
-                <div class="wave">{{ chunk.wave.height }}m   {{chunk.wave.period }}sec</div>
-              </div>
-
-            {% endif %}
-          {% endfor %}
-
-        </div>
-
-      {% endfor %}
-    </script>
-
     <div id="main_content"></div>
-
     <script src="js/swig.js"></script>
+    <script src="js/template"></script>
     <script src="js/braaistrap.js"></script>
-
   </body>
 </html>

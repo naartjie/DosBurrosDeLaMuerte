@@ -1,6 +1,3 @@
-var mainTpl = document.querySelector('#main_tpl').text;
-var mainView = swig.compile(mainTpl);
-
 var minimalAjax = function(url, callback){
         
     var xmlHTTP = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("MicrosoftXMLHTTP");
@@ -14,5 +11,7 @@ var minimalAjax = function(url, callback){
  
 minimalAjax('/api', function(dataStr) {
     var data = JSON.parse(dataStr);
-    document.querySelector('#main_content').innerHTML = mainView(data);
+    var content = swig.run(mainTemplate, data);
+
+    document.querySelector('#main_content').innerHTML = content;
 });
