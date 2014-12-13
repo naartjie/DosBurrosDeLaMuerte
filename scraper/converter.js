@@ -4,6 +4,8 @@ var _ = require('lodash'),
     assert = require('assert'),
     moment = require('moment');
 
+var KMS_IN_KNOT = 1.852;
+
 module.exports = converter;
 function converter(wgData) {
 
@@ -51,6 +53,8 @@ function convertToFlatArray (meat) {
         meat.MCDC,
         meat.HCDC,
         meat.TCDC,
+        meat.WINDSPD,
+        meat.GUST,
         meat.WINDDIR,
     ];
 
@@ -71,8 +75,10 @@ function convertToFlatArray (meat) {
                 total: Number(data[7]),
             },
             wind: {
-                degrees: data[8],
-                cardinal: degreesToCardinal(data[8]),
+                speed: Math.round(data[8] * KMS_IN_KNOT),
+                gusts: Math.round(data[9] * KMS_IN_KNOT),
+                degrees: data[10],
+                cardinal: degreesToCardinal(data[10]),
             }
         };
     });

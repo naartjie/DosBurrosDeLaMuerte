@@ -70,8 +70,8 @@ describe('converter', function() {
             low: 0, med: 0, high: 0, total: 0
         });
 
-        // expect( first.wind.speed ).to.equal();
-        // expect( first.wind.gusts ).to.equal();
+        expect( first.wind.speed ).to.equal(24);
+        expect( first.wind.gusts ).to.equal(30);
         expect( first.wind.degrees ).to.equal(204);
         expect( first.wind.cardinal ).to.equal('SSW');
 
@@ -88,8 +88,8 @@ describe('converter', function() {
             low: 99, med: 5, high: 1, total: 99
         });
 
-        // expect( last.wind.speed ).to.equal();
-        // expect( last.wind.gusts ).to.equal();
+        expect( last.wind.speed ).to.equal(18);
+        expect( last.wind.gusts ).to.equal(27);
         expect( last.wind.degrees ).to.equal(189);
         expect( last.wind.cardinal ).to.equal('S');
     });
