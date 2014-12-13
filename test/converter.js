@@ -3,7 +3,6 @@
 var mocha    = require('mocha'),
     describe = mocha.describe,
     it       = mocha.it,
-    fs       = require('fs'),
     moment   = require('moment'),
     _        = require('lodash'),
     expect   = require('chai').expect;
@@ -53,7 +52,7 @@ describe('converter', function() {
 
     it('should convert to flat array', function() {
 
-        var meat = require('./fixtures/meat.js');
+        var meat = require('./fixtures/wg-data').meat;
         var result = converter.convertToFlatArray(meat);
 
         expect( result ).to.have.length( meat.hr_weekday.length );
@@ -62,7 +61,11 @@ describe('converter', function() {
         expect( first.dayOffset ).to.equal(0);
         expect( first.hour ).to.equal('8am');
         expect( first.temperature ).to.equal(21);
-        // expect( first.precipitation ).to.equal();
+        expect( first.precipitation ).to.equal(0);
+        
+        // and second
+        expect( result[1].precipitation ).to.equal(0.1);
+
         // expect( first.clouds ).to.equal();
 
         // expect( first.wind.speed ).to.equal();
@@ -74,7 +77,11 @@ describe('converter', function() {
         expect( last.dayOffset ).to.equal(7);
         expect( last.hour ).to.equal('8pm');
         expect( last.temperature ).to.equal(20);
-        // expect( last.precipitation ).to.equal();
+        expect( last.precipitation ).to.equal(1);
+
+        // and second to last
+        expect( result.slice(-2)[0].precipitation ).to.equal(1.1);
+
         // expect( last.clouds ).to.equal();
 
         // expect( last.wind.speed ).to.equal();
@@ -100,8 +107,7 @@ describe('converter', function() {
 
     it('should digest JSON data', function() {
 
-        var wgJson = JSON.parse(fs.readFileSync(__dirname + '/fixtures/wg_data.json'));
-
+        var wgJson = require('./fixtures/wg-data').wgJson;
         var dosBurrosData = converter(wgJson);
 
         expect(dosBurrosData).to.have.property('days');

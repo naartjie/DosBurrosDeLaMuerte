@@ -46,6 +46,7 @@ function convertToFlatArray (meat) {
         daysToOffset(meat.hr_weekday),
         meat.hr_h,
         meat.TMP,
+        meat.APCP,
         meat.WINDDIR,
     ];
 
@@ -58,9 +59,10 @@ function convertToFlatArray (meat) {
             dayOffset: data[0],
             hour: moment().set('hours', data[1]).format('ha'),
             temperature: Math.round(data[2]),
+            precipitation: Number(data[3]),
             wind: {
-                degrees: data[3],
-                cardinal: degreesToCardinal(data[3]),
+                degrees: data[4],
+                cardinal: degreesToCardinal(data[4]),
             }
         };
     });
