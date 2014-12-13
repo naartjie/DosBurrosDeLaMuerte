@@ -33,17 +33,18 @@ h1, .h1 {
   background: #fff;
   margin-top: 30px;
   margin-bottom: 30px;
-  
+  display: inline-block;
+  width: 100%;
 }
 
-.col1 {}
+.col1 {width: 25%; height: 100%; display: inline-block; float: left;}
 .expandedTime {background: #ff00ff;}
 .expandedTemp {background: #00ff00;}
 
-.col2 {}
+.col2 {width: 40%; display: inline-block; padding-left: 2%;}
 .expandedWeather {background: #333311;}
 
-.col3 {}
+.col3 {width: 30%; height: 100%; float: right; display: inline-block;}
 .expandedWind {background: #2211ff;}
 .expandedWave { background: #ff5588;}
 
@@ -52,10 +53,10 @@ h1, .h1 {
 /* COLLAPSED COLUMN */
 
 .collapsed {
-  background: #fff;
+  background: #fff; clear: both;
 }
 
-.time {display: inline-block; width:19%; background: #ff00ff;}
+.time {display: inline-block; width:18%; background: #ff00ff;}
 
 .temp {display: inline-block; width:19%; background: #00ff00;}
 
