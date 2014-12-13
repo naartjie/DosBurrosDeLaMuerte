@@ -67,13 +67,18 @@ describe('converter', function() {
         expect( result[1].precipitation ).to.equal(0.1);
 
         expect( first.cloud ).to.eql({
-            low: 0, med: 0, high: 0, total: 0
+              low: 0, 
+              med: 0, 
+             high: 0, 
+            total: 0
         });
 
-        expect( first.wind.speed ).to.equal(24);
-        expect( first.wind.gusts ).to.equal(30);
-        expect( first.wind.degrees ).to.equal(204);
-        expect( first.wind.cardinal ).to.equal('SSW');
+        expect( first.wind ).to.eql({
+               speed: 24,
+               gusts: 30,
+             degrees: 204,
+            cardinal: 'SSW',
+        });
 
         var last = result.slice(-1)[0];
         expect( last.dayOffset ).to.equal(7);
@@ -88,10 +93,13 @@ describe('converter', function() {
             low: 99, med: 5, high: 1, total: 99
         });
 
-        expect( last.wind.speed ).to.equal(18);
-        expect( last.wind.gusts ).to.equal(27);
-        expect( last.wind.degrees ).to.equal(189);
-        expect( last.wind.cardinal ).to.equal('S');
+        expect( last.wind ).to.eql({
+               speed: 18,
+               gusts: 27,
+             degrees: 189,
+            cardinal: 'S',
+        });
+
     });
 
     it('should convert degrees to cardinal', function() {
