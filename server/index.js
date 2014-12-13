@@ -2,16 +2,17 @@
 
 var express = require('express');
 var app = express();
-var data = require('./lib/data');
+var scraper = require('../scraper');
 
 
 var pretty = function(data) {
     return JSON.stringify(data, null, 2);
-}
+};
 
 app.get('/api', function(req, res) {
     res.set('Content-Type', 'application/json');
-    res.send(pretty(data));
+    res.send(pretty(scraper.getCachedData()));
+    // res.send(scraper.getCachedData());
 });
 
 var port = process.env.PORT || 3000;
