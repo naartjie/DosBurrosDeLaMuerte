@@ -3,19 +3,25 @@
 var express = require('express');
 var app = express();
 
+var fs = require('fs');
+
 var swig = require('swig');
-var template = require('fs').readFileSync(__dirname + '/../client/templates/content.swig.html');
-var tplJsStr = 'var mainTemplate = ' + swig.precompile(template.toString(), { 
-    // filename: 'content.swig.html',
-    // locals: {},
-}).tpl.toString().replace('anonymous', '');
+var template = fs.readFileSync(__dirname + '/../client/templates/content.swig.html').toString();
+var swigJs = fs.readFileSync(__dirname + '/../node_modules/swig/dist/swig.min.js')
+    .toString()
+    .replace('//# sourceMappingURL=dist/swig.js.map', '');
+var mainTplJs = 'var mainTemplate = ' + swig
+    .precompile(template, {})
+    .tpl
+    .toString()
+    .replace('anonymous', '');
+var templateJs = swigJs + '\n' + mainTplJs;
 
 var scraper = require('../scraper');
 
-
 app.get('/js/template', function(req, res) {
     res.set('Content-Type', 'application/javascript');
-    res.send(tplJsStr);
+    res.send(templateJs);
 });
 
 app.get('/api', function(req, res) {
@@ -27,7 +33,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/durban', function(req, res) {
-    res.sendFile('index.html', {root: __dirname + '/../client/'});
+    res.sendFile('index.html', { root: __dirname + '/../client/' });
 });
 
 app.use(express.static(__dirname + '/../client/'));
