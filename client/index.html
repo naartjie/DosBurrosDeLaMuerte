@@ -13,39 +13,59 @@
   </head>
   
   <body>
-    <div class="page-header">
-      <h1>TODAY</h1>
-    </div>
-    
-    <div class="wrapper">
-      
-        <div class="expanded">
-          
-          <div class="col1">
-            <div class="expandedTime">3 pm</div>
-            <div class="expandedTemp">27°</div>
-          </div>
-          
-          <div class="col2">
-            <div class="expandedWeather"><img src="svg/sunny.svg"></div>
-          </div>
-          
-          <div class="col3">
-            <div class="expandedWind">20kph NE</div>
-            <div class="expandedWave">2m   12sec</div>
-          </div>
-          
+
+    <script id="main_tpl" type="text/swig-template">
+      {% for day in days %}
+
+        <div class="page-header">
+          <h1>{{ day.name }}</h1>
         </div>
         
-        <div class="collapsed"> 
-          <div class="time">3 pm</div>
-          <div class="temp">27°</div>
-          <div class="summary"><img src="svg/cloudy.svg"></div>
-          <div class="wind">20kph NE</div>
-          <div class="wave">2m   12sec</div>
+        <div class="wrapper">
+
+          {% for chunk in day.chunks %}
+            {% if loop.first %}
+
+              <div class="expanded">
+                
+                <div class="col1">
+                  <div class="expandedTime">{{ chunk.hour }}</div>
+                  <div class="expandedTemp">{{ chunk.temperature }}°</div>
+                </div>
+                
+                <div class="col2">
+                  <div class="expandedWeather"><img src="svg/sunny.svg"></div>
+                </div>
+                
+                <div class="col3">
+                  <div class="expandedWind">{{ chunk.wind.speed }}kph {{ chunk.wind.cardinal }}</div>
+                  <div class="expandedWave">{{ chunk.wave.height }}m   {{ chunk.wave.period }}sec</div>
+                </div>
+                
+              </div>
+
+            {% else %}
+
+              <div class="collapsed"> 
+                <div class="time">{{ chunk.hour }}</div>
+                <div class="temp">{{ chunk.temperature }}°</div>
+                <div class="summary"><img src="svg/cloudy.svg"></div>
+                <div class="wind">{{ chunk.wind.speed}}kph {{ chunk.wind.cardinal }}</div>
+                <div class="wave">{{ chunk.wave.height }}m   {{chunk.wave.period }}sec</div>
+              </div>
+
+            {% endif %}
+          {% endfor %}
+
         </div>
-        
-    </div>
-    
+
+      {% endfor %}
+    </script>
+
+    <div id="main_content"></div>
+
+    <script src="js/swig.js"></script>
+    <script src="js/braaistrap.js"></script>
+
   </body>
 </html>

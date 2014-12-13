@@ -15,7 +15,7 @@ app.get('/api', function(req, res) {
 });
 
 app.get('/durban', function(req, res) {
-    res.sendFile('index.swig.html', {root: __dirname + '/../client/'});
+    res.sendFile('index.html', {root: __dirname + '/../client/'});
 });
 
 app.get('/', function(req, res) {
