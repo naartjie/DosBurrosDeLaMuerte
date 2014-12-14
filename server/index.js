@@ -1,10 +1,12 @@
 'use strict';
 
+var fs = require('fs');
+
 var express = require('express');
 var app = express();
 var env = process.env.NODE_ENV || 'development';
 
-var fs = require('fs');
+var scraper = require('../scraper');
 
 var template = (function() {
     var swig = require('swig');
@@ -29,7 +31,6 @@ var template = (function() {
     }
 })();
 
-var scraper = require('../scraper');
 
 app.get('/js/template', function(req, res) {
     res.set('Content-Type', 'application/javascript');
