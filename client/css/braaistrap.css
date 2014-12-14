@@ -52,7 +52,7 @@ h1, .h1 {
   position: relative;
   background: #fff;
   margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.4em;
   display: inline-block;
   width: 100%;
   -webkit-border-radius: 5px;
@@ -67,7 +67,7 @@ h1, .h1 {
 }
 
 .col1 {width: 25%; display: inline-block; float: left; }
-.expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.2em; color: #777; }
+.expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.1em; color: #777; }
 .expandedTemp {font-family: Roboto Slab, serif; padding-left: 0.6em; }
 .expandedTemp .tempdeg {font-size: 3.2em; line-height: 1em; width: 0px; color: #F7C90B; margin-top: 0px; }
 .expandedTemp span {font-size: 0.5em; background-color: #F7C90B; vertical-align: bottom; padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px; color: #fff; }
