@@ -69,7 +69,7 @@ h1, .h1 {
 .col1 {width: 25%; display: inline-block; float: left; }
 .expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.1em; color: #777; }
 .expandedTemp {font-family: Roboto Slab, serif; padding-left: 0.6em; }
-.expandedTemp .tempdeg {font-size: 3.2em; line-height: 1em; width: 0px; color: #F7C90B; margin-top: 0px; }
+.expandedTemp .tempdeg {font-size: 3.2em; line-height: 1em; width: 0px; margin-top: 0px; color: #F9C900; }
 .expandedTemp span {font-size: 0.5em; background-color: #F7C90B; vertical-align: bottom; padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px; color: #fff; }
 
 .col2 {width: 40%; display: inline-block; }
@@ -100,7 +100,7 @@ h1, .h1 {
 
 .time {font-size: 1em; font-family: Lato, sans-serif; font-weight: 400; margin: 8% 0 0 3%; display: inline-block; width:15%; vertical-align: top; color: #777; }
 
-.temp {font-size: 2.2em; font-family: Roboto Slab, serif; color: #222; margin: 3% 0 0 0%; display: inline-block; width:19%; text-align: center; vertical-align: top; }
+.temp {font-size: 2.2em; font-family: Roboto Slab, serif; margin: 3% 0 0 0%; display: inline-block; width:19%; text-align: center; vertical-align: top; }
 
 .summary {display: inline-block; width:21%; }
 .summary .img {height:auto; vertical-align: middle; }
@@ -110,8 +110,6 @@ h1, .h1 {
 
 .wave {position:relative; display: inline-block; width:18%; vertical-align: top; margin: 0.4em 0 0 0; }
 .wave span {font-family: Lato, sans-serif; font-weight: 700; font-size: 0.6em; position: absolute; color: #128BB5; top:0.5em; left:0.5em; }
-
-
 
 
 /* MEDIA QUERY HACKS */
