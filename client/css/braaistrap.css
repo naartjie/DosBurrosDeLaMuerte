@@ -15,11 +15,11 @@ body {
 
 .page-header {
   position: relative;
-  font-size: 12px;
+  font-size: 10px;
   padding-bottom: 1px;
   padding-top: 1px;
   margin-bottom: 0.5em;
-  background: #29abe2;
+  background: #1799c6;
   z-index: 100;
   width: 100%;
   transition: all 0.4s ease;
@@ -76,7 +76,7 @@ h1, .h1 {
 
 .col3 {width: 30%; display: inline-block; float: right;}
 .expandedWind {margin: 10% 15% 0% 0; padding-bottom: 25%; background-image: url("../png/wind.gif"); background-size: 100%; background-repeat: no-repeat; text-align: right; font-size: 0.85em; }
-.expandedWave {margin: 20% 15% 10% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.8em; text-align: right;}
+.expandedWave {margin: 20% 15% 10% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.7em; text-align: right;}
 
 
 
@@ -101,7 +101,8 @@ h1, .h1 {
 .summary {display: inline-block; width:21%; }
 .summary .img {height:auto; vertical-align: middle; }
 
-.wind {position:relative; display: inline-block; width:18%; vertical-align: top; font-size: 0.65em; margin: 2% 0 0% 0;}
+.wind {position:relative; display: inline-block; width:18%; vertical-align: top; font-size: 0.65em; margin: 1% 0 0 0;}
 .wind span {text-align: right; position: absolute; color: #111; right:0.8em; bottom:0.5em; }
 
-.wave {display: inline-block; width:18%; vertical-align: top; margin: 3% 0 3% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.5em; text-align: right; }
+.wave {position:relative; display: inline-block; width:18%; vertical-align: top; margin: 0.4em 0 0 0; }
+.wave span {font-family: Lato, sans-serif; font-weight: 700; font-size: 0.6em; position: absolute; color: #128BB5; top:0.5em; left:0.5em; }
