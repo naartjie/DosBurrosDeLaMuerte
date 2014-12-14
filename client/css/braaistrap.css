@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=iconicfill);
+
+/* iconicfill*/
+[class*="iconicfill-"]:before {
+  font-family: 'IconicFill', sans-serif;
+}
+
 body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
@@ -15,7 +22,7 @@ body {
 }
 
 .page-header.sticky {
-  font-size: 9px;
+  font-size: 10px;
   padding-bottom: 1px;
   padding-top: 1px;
   margin-bottom: 0.5em;
@@ -41,44 +48,49 @@ h1, .h1 {
 
 .expanded {
   background: #fff;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
   display: inline-block;
   width: 100%;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 3px 6px 3px #92A0A8;
+  box-shadow: 0 3px 6px 3px #92A0A8;
 }
 
 .col1 {width: 25%; display: inline-block; float: left; }
-.expandedTime {margin: 10% 0 10% 5%; font-size: 1.3em; background: #ff00ff; }
-.expandedTemp {margin: 20% 0 10% 5%; font-size: 3em; font-family: Roboto Slab; serif; color: #222; background: #00ff00; }
+.expandedTime {padding-left: 0.3em; margin: 10% 0 5% 10%; font-family: Lato; sans-serif; font-weight: 700; font-size: 1.3em; color: #222; }
+.expandedTemp {margin: 10% 0 10% 15%;  font-size: 3.2em; font-family: Roboto Slab; serif; color: #222; text-align: right; }
 
 .col2 {width: 40%; display: inline-block; padding-left: 2%;}
-.expandedWeather {background: #333311;}
+.expandedWeather {background: #fff;}
 
 .col3 {width: 30%; display: inline-block; float: right;}
 .expandedWind {margin: 10% 5% 10% 0; background: #2211ff;}
-.expandedWave {margin: 20% 5% 10% 0; background: #ff5588;}
+.expandedWave {margin: 20% 5% 10% 0; background: #ff5588; font-family: Lato; sans-serif; font-weight: 700; font-size: 0.8em; text-align: right;}
 
 
 
 /* COLLAPSED COLUMN */
 
 .collapsed {
-  background: #fff; clear: both;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  background: #efefef;
+  clear: both;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 3px 2px #BCBCBC;
+  box-shadow: 0 0 3px 2px #BCBCBC;
 }
 
-.time {font-size: 1.1em; margin: 7% 0 0 2%; display: inline-block; width:16%; vertical-align: top; background: #ff00ff; }
+.time {font-size: 1em; font-family: Lato; sans-serif; font-weight: 400; margin: 8% 0 0 3%; display: inline-block; width:15%; vertical-align: top; color: #222; }
 
-.temp {font-size: 2.2em; font-family: Roboto Slab; serif; color: #222; margin: 3% 0 0 0%; display: inline-block; width:20%; text-align: center; vertical-align: top; background: #00ff00; }
+.temp {font-size: 2.2em; font-family: Roboto Slab; serif; color: #222; margin: 3% 0 0 0%; display: inline-block; width:19%; text-align: center; vertical-align: top; }
 
-.summary {display: inline-block; width:19%; background: #ccdd22;}
+.summary {display: inline-block; width:21%; }
 .summary .img {height:auto; vertical-align: middle;}
 
-.wind {display: inline-block; width:19%; vertical-align: top; background: #2211ff;}
+.wind {display: inline-block; width:18%; vertical-align: top; margin: 3% 0 3% 0; background: #2211ff; font-size: 0.8em; text-align: right;}
 
-.wave {display: inline-block; width:18%; vertical-align: top; background: #ff5588;}
+.wave {display: inline-block; width:18%; vertical-align: top; margin: 3% 0 3% 0; background: #ff5588; font-family: Lato; sans-serif; font-weight: 700; font-size: 0.6em; text-align: right; }
