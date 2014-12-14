@@ -9,23 +9,21 @@
   <div class="wrapper">
 
     {% for chunk in day.chunks %}
+
       <div class="chunk">
+
         <div class="expanded {% if not firstChunk or not loop.first %}hidden{% endif %}">
-          
           <div class="col1">
             <div class="expandedTime"><span class="iconicfill-clock"> </span>{{ chunk.hour }}</div>
-            <div class="expandedTemp">{{ chunk.temperature }}°</div>
+            <div class="expandedTemp"><div class="tempdeg">{{ chunk.temperature }}°</div><span>AVG CELCIUS</span></div>
           </div>
-          
           <div class="col2">
             <div class="expandedWeather"><img src="svg/partly.svg"></div>
           </div>
-          
           <div class="col3">
-            <div class="expandedWind">{{ chunk.wind.speed }}kph<br>{{ chunk.wind.cardinal }}</div>
-            <div class="expandedWave">{{ chunk.wave.height }}m   {{ chunk.wave.period }}sec</div>
+            <div class="expandedWind"><img src="../png/wind.gif"><span>{{ chunk.wind.speed }}kph<br>{{ chunk.wind.cardinal }}</span></div>
+            <div class="expandedWave">Wave {{ chunk.wave.height }}m   {{ chunk.wave.period }}sec <img src="../png/wave.gif"></div>
           </div>
-          
         </div>
 
         <div class="collapsed {% if firstChunk and loop.first %}hidden{% endif %}"> 
