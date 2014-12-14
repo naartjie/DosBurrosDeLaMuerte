@@ -1,4 +1,4 @@
 {
     "browser": true,
-    "predef": ["$", "ActiveXObject", "swig", "mainTemplate"]
+    "predef": ["$", "ActiveXObject", "swig", "mainTemplate", "expandedTemplate", "collapsedTemplate"]
 }

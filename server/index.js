@@ -6,10 +6,10 @@ var express = require('express');
 var app = express();
 var env = process.env.NODE_ENV || 'development';
 
+var swig = require('swig');
 var scraper = require('../scraper');
 
 var template = (function() {
-    var swig = require('swig');
     var swigJs = fs.readFileSync(__dirname + '/../node_modules/swig/dist/swig.min.js')
         .toString()
         .replace('//# sourceMappingURL=dist/swig.js.map', '');
@@ -17,10 +17,32 @@ var template = (function() {
     var _renderTemplate = function() {
         var mainContentTpl = fs.readFileSync(
             __dirname + '/../client/templates/content.swig.html').toString();
-        return 'var mainTemplate = ' + swig.precompile(mainContentTpl, {})
+
+        var expandedTpl = fs.readFileSync(
+            __dirname + '/../client/templates/expanded.swig.html').toString();
+
+        var collapsedTpl = fs.readFileSync(
+            __dirname + '/../client/templates/collapsed.swig.html').toString();
+
+        return 'var expandedTemplate = ' + 
+            swig.precompile(expandedTpl, { filename: 'expanded.swig.html' })
             .tpl
             .toString()
-            .replace('anonymous', '') + '\n' + swigJs;
+            .replace('anonymous', '') + 
+            '\n' +
+            'var collapsedTemplate = ' + 
+            swig.precompile(collapsedTpl, { filename: 'collapsed.swig.html' })
+            .tpl
+            .toString()
+            .replace('anonymous', '') + 
+            '\n' +
+            'var mainTemplate = ' + 
+            swig.precompile(mainContentTpl, {})
+            .tpl
+            .toString()
+            .replace('anonymous', '') + 
+            '\n' +
+            swigJs;
     };
 
     if (env === 'development') {

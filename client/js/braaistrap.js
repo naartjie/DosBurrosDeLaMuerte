@@ -1,5 +1,9 @@
 'use strict';
 
+swig.run(expandedTemplate, {}, '/expanded.swig.html');
+swig.run(collapsedTemplate, {}, '/collapsed.swig.html');
+swig.run(mainTemplate, {}, '/content.swig.html');
+
 var minimalAjax = function(url, callback) {
     var xmlHTTP = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('MicrosoftXMLHTTP');
     xmlHTTP.onreadystatechange = function() {
@@ -9,11 +13,10 @@ var minimalAjax = function(url, callback) {
     xmlHTTP.open('GET', url, true);
     xmlHTTP.send();
 };
- 
+
 minimalAjax('/api', function(dataStr) {
     var data = JSON.parse(dataStr);
-    var content = swig.run(mainTemplate, data);
-
+    var content = swig.run(mainTemplate, data, '/content.swig.html');
     document.querySelector('#main_content').innerHTML = content;
 });
 
