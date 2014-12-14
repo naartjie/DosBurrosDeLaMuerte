@@ -50,6 +50,7 @@ h1, .h1 {
 /* EXPANDED COLUMN */
 
 .expanded {
+  position: relative;
   background: #fff;
   margin-top: 1em;
   margin-bottom: 0.5em;
@@ -59,6 +60,11 @@ h1, .h1 {
   border-radius: 5px;
   -webkit-box-shadow: 0 3px 6px 3px #92A0A8;
   box-shadow: 0 3px 6px 3px #92A0A8;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .col1 {width: 25%; display: inline-block; float: left; }
@@ -78,6 +84,7 @@ h1, .h1 {
 /* COLLAPSED COLUMN */
 
 .collapsed {
+  position: relative;
   background: #efefef;
   clear: both;
   margin-top: 1em;
@@ -86,6 +93,7 @@ h1, .h1 {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 3px 2px #BCBCBC;
   box-shadow: 0 0 3px 2px #BCBCBC;
+  cursor: pointer;
 }
 
 .time {font-size: 1em; font-family: Lato, sans-serif; font-weight: 400; margin: 8% 0 0 3%; display: inline-block; width:15%; vertical-align: top; color: #222; }

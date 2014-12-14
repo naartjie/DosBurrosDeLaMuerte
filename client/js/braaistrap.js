@@ -62,3 +62,30 @@ $(window).scroll(function() {
     });
 
 });
+
+
+$(function() {
+    $('#main_content').on('click', '.expanded', function() {
+        var toHide = $(this);
+        var toShow = toHide.parent().children().last();
+        toHide.hide();
+        toShow.show();
+
+        // toHide.animate({
+        //     height: toShow.height(),
+        //     opacity: 0,
+        // }, 2000, function() {
+        //     toHide.hide();
+        //     toShow().show();
+        // });
+    });
+
+    $('#main_content').on('click', '.collapsed', function() {
+        var toHide = $(this);
+        var toShow = toHide.parent().children().first();
+        $('.expanded').hide();
+        $('.collapsed').show();
+        toHide.hide();
+        toShow.show();
+    });
+});
