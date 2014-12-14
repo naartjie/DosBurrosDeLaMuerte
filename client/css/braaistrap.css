@@ -8,7 +8,6 @@
 body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
-  color: #ccc;
   background-color: #c4cecd;
   margin: 0 0 0 0px;
 }
@@ -62,16 +61,18 @@ h1, .h1 {
 }
 
 .col1 {width: 25%; display: inline-block; float: left; }
-.expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.3em; color: #222; }
-.expandedTemp {margin: 10% 0 10% 15%;  font-size: 3.2em; font-family: Roboto Slab, serif; color: #222; text-align: right; }
+.expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.2em; color: #777; }
+.expandedTemp {margin: 0% 0 5% 10%; font-family: Roboto Slab, serif; }
+.expandedTemp .temp {font-size: 3.4em; padding-left: 5px; width: 0px; padding-top: 3px; height: 75px; color: #F7C90B; }
+.expandedTemp span {font-size: 0.5em; background-color: #F7C90B; vertical-align: bottom; padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px; color: #fff; }
 
-.col2 {width: 40%; display: inline-block; padding-left: 2%;}
+.col2 {width: 40%; display: inline-block; padding-left: 1%;}
 .expandedWeather {background: #fff;}
 
 .col3 {width: 30%; display: inline-block; float: right;}
 .expandedWind {margin: 2% 12% 0% 0; position:relative; }
 .expandedWind img {width: 100%;}
-.expandedWind span {position: absolute; text-align: right; font-size: 0.8em; top: 0.5em; right: 0.1em; }
+.expandedWind span {position: absolute; text-align: right; font-size: 0.8em; top: 0.5em; right: 0.1em; color: #aaa;}
 .expandedWave {margin: 7% 12% 5% 0; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.7em; color: #128BB5; text-align: right;}
 .expandedWave img {width: 100%; padding-top: 0.2em;}
 
@@ -91,7 +92,7 @@ h1, .h1 {
   box-shadow: 0 0 3px 2px #BCBCBC;
 }
 
-.time {font-size: 1em; font-family: Lato, sans-serif; font-weight: 400; margin: 8% 0 0 3%; display: inline-block; width:15%; vertical-align: top; color: #222; }
+.time {font-size: 1em; font-family: Lato, sans-serif; font-weight: 400; margin: 8% 0 0 3%; display: inline-block; width:15%; vertical-align: top; color: #777; }
 
 .temp {font-size: 2.2em; font-family: Roboto Slab, serif; color: #222; margin: 3% 0 0 0%; display: inline-block; width:19%; text-align: center; vertical-align: top; }
 
@@ -99,7 +100,7 @@ h1, .h1 {
 .summary .img {height:auto; vertical-align: middle; }
 
 .wind {position:relative; display: inline-block; width:18%; vertical-align: top; font-size: 0.65em; margin: 1% 0 0 0;}
-.wind span {text-align: right; position: absolute; color: #111; right:0.8em; bottom:0.5em; }
+.wind span {text-align: right; position: absolute; color: #aaa; right:0.8em; bottom:0.5em; }
 
 .wave {position:relative; display: inline-block; width:18%; vertical-align: top; margin: 0.4em 0 0 0; }
 .wave span {font-family: Lato, sans-serif; font-weight: 700; font-size: 0.6em; position: absolute; color: #128BB5; top:0.5em; left:0.5em; }
