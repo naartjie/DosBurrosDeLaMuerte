@@ -98,7 +98,7 @@ h1, .h1 {
 .summary {display: inline-block; width:21%; }
 .summary .img {height:auto; vertical-align: middle; }
 
-.wind {position:relative; display: inline-block; width:18%; vertical-align: top; background: #cccccc; font-size: 0.6em; margin: 2% 0 2% 0;}
-.wind span {text-align: right; position: absolute; color: #111; right:2%; bottom:2%; }
+.wind {position:relative; display: inline-block; width:18%; vertical-align: top; font-size: 0.65em; margin: 2% 0 0% 0;}
+.wind span {text-align: right; position: absolute; color: #111; right:0.8em; bottom:0.5em; }
 
-.wave {display: inline-block; width:18%; vertical-align: top; margin: 3% 0 3% 0; background: #ff5588; font-family: Lato; sans-serif; font-weight: 700; font-size: 0.6em; text-align: right; }
+.wave {display: inline-block; width:18%; vertical-align: top; margin: 3% 0 3% 0; background: #ff5588; font-family: Lato; sans-serif; font-weight: 700; font-size: 0.5em; text-align: right; }
