@@ -1,5 +1,7 @@
 {% for day in days %}
 
+  {% set firstChunk = loop.first %}
+
   <div class="page-header">
     <h1>{{ day.name }}</h1>
   </div>
@@ -7,7 +9,7 @@
   <div class="wrapper">
 
     {% for chunk in day.chunks %}
-      {% if loop.first %}
+      {% if firstChunk and loop.first %}
 
         <div class="expanded">
           
