@@ -35,11 +35,9 @@ exports.getFreshData = function() {
 exports.getCachedData = function() {
 
     if (cache) {
-        console.log(1);
         //jshint newcap:false   
         return Q(cache);
     } else {
-        console.log(2);
         return exports.getFreshData();
     }
 
