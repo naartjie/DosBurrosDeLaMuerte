@@ -6,6 +6,7 @@
     "watch": "node_modules/mocha/bin/mocha --watch"
   },
   "dependencies": {
+    "debug": "^2.1.0",
     "express": "^4.10.6",
     "jquery": "^2.1.1",
     "lodash": "^2.4.1",

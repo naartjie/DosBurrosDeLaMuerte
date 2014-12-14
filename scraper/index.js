@@ -1,10 +1,9 @@
 'use strict';
 
-exports.convert = require('./converter');
-exports.pullDataz = require('./scraper');
+var scraper = require('./scraper');
+scraper.start();
 
-var data = exports.convert(require('../test/fixtures/wg-data').wgJson);
-
-exports.getCachedData = function() {
-    return data;
+module.exports = {
+    getCachedData: scraper.getCachedData,
+    convert: require('./converter'),
 };

@@ -1,11 +1,46 @@
 'use strict';
 
-var durbanUrl = 'www.windguru.cz/int/index.php?sc=4865';
+var Q = require('q');
+var convert = require('./converter');
+var pullDataz = require('./pull-dataz');
+var MINUTE = 60 * 1000;
+var cache = null;
 
-// var http = require('q-io/http');
+exports.start = function run() {
 
-module.exports = function pullDataz() {
+    console.log('pulling fresh data');
 
-    // return http.get(durbanUrl);
+    exports.getFreshData()
+    .catch(function(err) {
+        console.err('error pulling update from the W-G', err.toString(), err.stack);
+    })
+    .finally(function() {
+        Q.delay(2 * MINUTE)
+        .then(function() {
+            run();
+        });
+    });
+};
+
+exports.getFreshData = function() {
+    return pullDataz()
+    .then(function(wgData) {
+        var data = convert(wgData);
+        cache = data;
+
+        return cache;
+    });
+};
+
+exports.getCachedData = function() {
+
+    if (cache) {
+        console.log(1);
+        //jshint newcap:false   
+        return Q(cache);
+    } else {
+        console.log(2);
+        return exports.getFreshData();
+    }
 
 };

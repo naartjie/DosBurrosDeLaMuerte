@@ -5,7 +5,7 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 var env = process.env.NODE_ENV || 'development';
-
+var debug = require('debug')('server');
 var scraper = require('../scraper');
 
 var template = (function() {
@@ -43,7 +43,20 @@ app.get('/js/jquery', function(req, res) {
 });
 
 app.get('/api', function(req, res) {
-    res.json(scraper.getCachedData());
+    scraper.getCachedData()
+    .then(function(data) {
+        if (data) {
+            debug('sending wg data on /api');
+        } else {
+            console.error('GOT NO DATAZZZ');
+            return res.status(500).send('error');
+        }
+        res.json(data);
+    }).catch(function(err) {
+        console.error(err.toString(), err.stack);
+        res.status(500).send('error');
+    })
+    .done();
 });
 
 app.get('/', function(req, res) {
