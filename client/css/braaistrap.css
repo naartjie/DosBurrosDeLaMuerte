@@ -14,11 +14,13 @@ body {
 }
 
 .page-header {
+  position: relative;
   font-size: 12px;
   padding-bottom: 1px;
   padding-top: 1px;
   margin-bottom: 0.5em;
   background: #29abe2;
+  z-index: 2;
 }
 
 .page-header.sticky {
@@ -29,6 +31,10 @@ body {
   background: #1799c6;
   position: fixed;
   width: 100%;
+  z-index: 1;
+}
+.wrapper.sticky {
+  padding-top: 4em;
 }
 
 h1, .h1 {
