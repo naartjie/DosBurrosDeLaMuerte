@@ -34,7 +34,7 @@
           <div class="temp">{{ chunk.temperature }}°</div>
           <div class="summary"><img src="svg/cloudy.svg"></div>
           <div class="wind"><img src="svg/collapsed/wind/windy.svg"><span>{{ chunk.wind.cardinal }}<br>{{ chunk.wind.speed}}kph</span></div>
-          <div class="wave">{{ chunk.wave.height }}m   {{chunk.wave.period }}sec</div>
+          <div class="wave"><span>{{ chunk.wave.height }}m   {{chunk.wave.period }}sec</span><img src="svg/collapsed/wave/wavey.svg"></div>
         </div>
 
       {% endif %}
