@@ -20,7 +20,8 @@ body {
   padding-top: 1px;
   margin-bottom: 0.5em;
   background: #29abe2;
-  z-index: 2;
+  z-index: 100;
+  width: 100%;
   transition: all 0.4s ease;
 }
 
@@ -31,6 +32,7 @@ body {
   margin-bottom: 0.5em;
   background: #1799c6;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1;
 }
