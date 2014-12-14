@@ -47,7 +47,7 @@ describe('converter', function() {
         expect( converter.mapDayOffsetToWeekday(4, todayIsSunday) ).to.equal('Thursday');
         expect( converter.mapDayOffsetToWeekday(5, todayIsSunday) ).to.equal('Friday');
         expect( converter.mapDayOffsetToWeekday(6, todayIsSunday) ).to.equal('Saturday');
-        expect( converter.mapDayOffsetToWeekday(7, todayIsSunday) ).to.equal('Sunday');
+        expect( converter.mapDayOffsetToWeekday(7, todayIsSunday) ).to.equal('Next Sunday');
     });
 
     it('should convert to flat array', function() {

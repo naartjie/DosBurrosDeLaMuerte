@@ -39,14 +39,17 @@ function converter(wgData) {
 
 converter.mapDayOffsetToWeekday = (function() {
     var lookup = {
-        0: 'Today',
-        1: 'Tomorrow',
+        0: function() { return 'Today' },
+        1: function() { return 'Tomorrow' },
+        7: function(day, overrideTodayForTesting) {
+            return 'Next ' + moment(overrideTodayForTesting).add(day, 'days').format('dddd');
+        },
         default: function(day, overrideTodayForTesting) {
             return moment(overrideTodayForTesting).add(day, 'days').format('dddd');
-        }
+        },
     };
     return function(dayOffset, overrideTodayForTesting) {
-        return lookup[dayOffset] || lookup.default(dayOffset, overrideTodayForTesting);
+        return (lookup[dayOffset] || lookup.default)(dayOffset, overrideTodayForTesting);
     };
 })();
 
