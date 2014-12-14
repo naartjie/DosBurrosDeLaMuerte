@@ -21,6 +21,7 @@ body {
   margin-bottom: 0.5em;
   background: #29abe2;
   z-index: 2;
+  transition: all 0.4s ease;
 }
 
 .page-header.sticky {
