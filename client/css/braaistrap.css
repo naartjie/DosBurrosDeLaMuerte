@@ -22,20 +22,14 @@ body {
   background: #1799c6;
   z-index: 100;
   width: 100%;
-  transition: all 0.4s ease;
 }
 
 .page-header.sticky {
-  font-size: 10px;
-  padding-bottom: 1px;
-  padding-top: 1px;
-  margin-bottom: 0.5em;
-  background: #1799c6;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 1;
 }
+
 .wrapper.sticky {
   padding-top: 4em;
 }
