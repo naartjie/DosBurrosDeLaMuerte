@@ -36,6 +36,11 @@ app.get('/js/template', function(req, res) {
     res.send(template());
 });
 
+app.get('/js/jquery', function(req, res) {
+    res.set('Content-Type', 'application/javascript');
+    res.sendFile('jquery-2.1.1.min.js', { root: __dirname + '/../node_modules/jquery/dist/cdn' });
+});
+
 app.get('/api', function(req, res) {
     res.json(scraper.getCachedData());
 });
