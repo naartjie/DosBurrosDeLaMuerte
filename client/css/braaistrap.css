@@ -68,15 +68,16 @@ h1, .h1 {
 }
 
 .col1 {width: 25%; display: inline-block; float: left; }
-.expandedTime {padding-left: 0.3em; margin: 10% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.3em; color: #222; }
+.expandedTime {padding-left: 0.3em; margin: 15% 0 5% 10%; font-family: Lato, sans-serif; font-weight: 700; font-size: 1.3em; color: #222; }
 .expandedTemp {margin: 10% 0 10% 15%;  font-size: 3.2em; font-family: Roboto Slab, serif; color: #222; text-align: right; }
 
 .col2 {width: 40%; display: inline-block; padding-left: 2%;}
 .expandedWeather {background: #fff;}
 
 .col3 {width: 30%; display: inline-block; float: right;}
-.expandedWind {margin: 10% 5% 10% 0; background: #2211ff;}
-.expandedWave {margin: 20% 5% 10% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.8em; text-align: right;}
+.expandedWind {margin: 10% 15% 0% 0; padding-bottom: 25%; background-image: url("../png/wind.gif"); background-size: 100%; background-repeat: no-repeat; text-align: right; font-size: 0.85em; }
+.expandedWave {margin: 20% 15% 10% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.8em; text-align: right;}
+
 
 
 
