@@ -88,14 +88,15 @@ function convertToFlatArray (meat) {
                 med: Number(data[5]),
                 high: Number(data[6]),
                 total: Number(data[7]),
+                image: imageFor(Number(data[3]), Number(data[7])),
             },
+
             wind: {
                 speed: Math.round(data[8] * KMS_IN_KNOT),
                 gusts: Math.round(data[9] * KMS_IN_KNOT),
                 degrees: data[10],
                 cardinal: degreesToCardinal(data[10]),
             },
-
             wave: {
                 height: data[11],
                 period: Math.round(data[12]),
@@ -104,6 +105,22 @@ function convertToFlatArray (meat) {
             }
         };
     });
+}
+
+function imageFor(rain, cloud) {
+    if (rain > 1.8) {
+        return 'rain';
+    } else if (rain > 0.2) {
+        return 'lightrain';
+    } else if (cloud > 80) {
+        return 'overcast';
+    } else if (cloud > 50) {
+        return 'cloudy';
+    } else if (cloud > 20) {
+        return 'partly';
+    } else {
+        return 'sunny';
+    }
 }
 
 converter.daysToOffset = daysToOffset;
