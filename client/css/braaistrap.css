@@ -52,8 +52,8 @@ h1, .h1 {
   position: relative;
   background: #fff;
   margin-top: 1em;
-  margin-bottom: 1.4em;
-  display: inline-block;
+  margin-bottom: 1.5em;
+  display: block;
   width: 100%;
   -webkit-border-radius: 5px;
   border-radius: 5px;
