@@ -69,8 +69,11 @@ h1, .h1 {
 .expandedWeather {background: #fff;}
 
 .col3 {width: 30%; display: inline-block; float: right;}
-.expandedWind {margin: 10% 15% 0% 0; padding-bottom: 25%; background-image: url("../png/wind.gif"); background-size: 100%; background-repeat: no-repeat; text-align: right; font-size: 0.85em; }
-.expandedWave {margin: 20% 15% 10% 0; background: #ff5588; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.7em; text-align: right;}
+.expandedWind {margin: 2% 12% 0% 0; position:relative; }
+.expandedWind img {width: 100%;}
+.expandedWind span {position: absolute; text-align: right; font-size: 0.8em; top: 0.5em; right: 0.1em; }
+.expandedWave {margin: 7% 12% 5% 0; font-family: Lato, sans-serif; font-weight: 700; font-size: 0.7em; color: #128BB5; text-align: right;}
+.expandedWave img {width: 100%; padding-top: 0.2em;}
 
 
 
