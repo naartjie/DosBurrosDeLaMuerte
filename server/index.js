@@ -63,7 +63,7 @@ app.get('/', function(req, res) {
     res.redirect('/durban');
 });
 
-app.get('/durban', function(req, res) {
+app.get('/:spot(durban|capetown)', function(req, res) {
     res.sendFile('index.html', { root: __dirname + '/../client/' });
 });
 
