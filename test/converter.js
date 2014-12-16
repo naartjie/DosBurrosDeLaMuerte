@@ -70,7 +70,8 @@ describe('converter', function() {
               low: 0, 
               med: 0, 
              high: 0, 
-            total: 0
+            total: 0,
+            image: 'sunny',
         });
 
         expect( first.wind ).to.eql({
@@ -97,7 +98,7 @@ describe('converter', function() {
         expect( result.slice(-2)[0].precipitation ).to.equal(1.1);
 
         expect( last.cloud ).to.eql({
-            low: 99, med: 5, high: 1, total: 99
+            low: 99, med: 5, high: 1, total: 99, image: 'lightrain',
         });
 
         expect( last.wind ).to.eql({
@@ -154,7 +155,8 @@ describe('converter', function() {
                   low: 0, 
                   med: 0, 
                  high: 0, 
-                total: 0
+                total: 0,
+                image: 'sunny',
             },
             wind: {
                    speed: 24,
@@ -182,6 +184,7 @@ describe('converter', function() {
                   med: 0, 
                  high: 23, 
                 total: 92,
+                image: 'overcast',
             },
             wind: {
                    speed: 7,
