@@ -8,7 +8,7 @@
 body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
-  background-color: #c4cecd;
+  /*background-color: #c4cecd;*/
   margin: 0 0 0 0px;
 }
 
@@ -55,10 +55,6 @@ h1, .h1 {
   margin-bottom: 1.5em;
   display: block;
   width: 100%;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 3px 6px 3px #92A0A8;
-  box-shadow: 0 3px 6px 3px #92A0A8;
   cursor: pointer;
 }
 
@@ -87,14 +83,9 @@ h1, .h1 {
 
 .collapsed {
   position: relative;
-  background: #efefef;
   clear: both;
   margin-top: 1em;
   margin-bottom: 1.5em;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 3px 2px #BCBCBC;
-  box-shadow: 0 0 3px 2px #BCBCBC;
   cursor: pointer;
 }
 
