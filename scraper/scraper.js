@@ -4,13 +4,16 @@ var Q = require('q');
 var convert = require('./converter');
 var pullDataz = require('./pull-dataz');
 var MINUTE = 60 * 1000;
-var cache = null;
+var cache = {};
 
 exports.start = function run() {
 
     console.log('pulling fresh data');
 
-    exports.getFreshData()
+    Q.all(
+        exports.pullFreshData('capetown'),
+        exports.pullFreshData('durban')
+    )
     .catch(function(err) {
         console.err('error pulling update from the W-G', err.toString(), err.stack);
     })
@@ -22,23 +25,19 @@ exports.start = function run() {
     });
 };
 
-exports.getFreshData = function() {
-    return pullDataz()
+exports.pullFreshData = function(spot) {
+    pullDataz(spot)
     .then(function(wgData) {
-        var data = convert(wgData);
-        cache = data;
-
-        return cache;
+        cache[spot] = convert(wgData);
+        return cache[spot];
     });
 };
 
-exports.getCachedData = function() {
-
-    if (cache) {
+exports.getCachedData = function(spot) {
+    if (cache[spot]) {
         //jshint newcap:false   
-        return Q(cache);
+        return Q(cache[spot]);
     } else {
-        return exports.getFreshData();
+        return exports.pullFreshData(spot);
     }
-
 };
