@@ -10,7 +10,7 @@ var minimalAjax = function(url, callback) {
     xmlHTTP.send();
 };
  
-minimalAjax('/api', function(dataStr) {
+minimalAjax('/api/' + app.spot, function(dataStr) {
     var data = JSON.parse(dataStr);
     var content = swig.run(mainTemplate, data);
 

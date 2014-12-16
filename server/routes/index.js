@@ -13,7 +13,7 @@ module.exports = function(app) {
     });
 
     app.get('/:spot(durban|capetown)', function(req, res) {
-        res.sendFile('index.html', { root: __dirname + '/../../client/' });
+        res.render('spot.html', { spot: req.params.spot });
     });
 
     app.get('/', function(req, res) {
